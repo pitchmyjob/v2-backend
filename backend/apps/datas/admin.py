@@ -1,12 +1,9 @@
 from django.contrib import admin
-from .models import Industry, Employes
+from .models import Industry, Employes, Contract, ContractTime
 
 
-@admin.register(Industry)
-class IndustryAdmin(admin.ModelAdmin):
+@admin.register(Industry, Contract, Employes)
+class Admin(admin.ModelAdmin):
     pass
 
-@admin.register(Employes)
-class EmployesAdmin(admin.ModelAdmin):
-    pass
 

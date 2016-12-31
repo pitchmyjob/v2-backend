@@ -6,7 +6,6 @@ from rest_framework import viewsets, mixins, generics
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from backend.apps.pro.models import Pro
-from rest_framework.decorators import list_route, detail_route
 
 class SignUpPro(APIView):
 
@@ -17,7 +16,7 @@ class SignUpPro(APIView):
         return Response(serializer.data)
 
 
-class Pro(generics.RetrieveUpdateAPIView):
+class retreiveUpdatePro(generics.RetrieveUpdateAPIView):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
     serializer_class = ProSerializer

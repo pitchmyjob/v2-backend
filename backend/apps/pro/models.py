@@ -5,6 +5,8 @@ from backend.authentification.models import User
 from backend.apps.datas.models import Industry, Employes
 from easy_thumbnails.fields import ThumbnailerImageField
 from backend.libs.media import generate_filename_pro
+from backend.libs.email import AsyncEmail
+
 
 class Pro(models.Model):
 	company			= models.CharField(_('Raison sociale'), max_length=250, null=True)
@@ -32,6 +34,9 @@ class Pro(models.Model):
 		pro = Pro.objects.create(company=kwargs['company'], phone=kwargs['phone'])
 		user.pro = pro
 		user.save()
+		user.add_group(['pro', 'pro_admin'])
+		mail = AsyncEmail(to=[user.email], subject="Bienvenue sur Pitch my Job", template="member/inscription.html", context={ "name" : user.first_name })
+		mail.send()
 		return pro
 
 	def save(self, *args, **kwargs):

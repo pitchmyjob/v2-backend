@@ -24,3 +24,21 @@ class Employes(models.Model):
 	class Meta:
 		verbose_name = "Nombre d'employés"
 		verbose_name_plural = "Liste nombre employés"
+
+
+
+class Contract(models.Model):
+	name = models.CharField(max_length=200, null=True)
+	active = models.BooleanField(default=True)
+
+	def __str__(self):
+		return self.name
+
+	class Meta:
+		verbose_name = "Type de contrat"
+		verbose_name_plural = "liste des type de contrat"
+
+
+class ContractTime(models.Model):
+	name 	= models.CharField(max_length=200, null=True)
+	active 	= models.BooleanField(default=True)

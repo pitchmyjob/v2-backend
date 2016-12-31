@@ -1,6 +1,6 @@
 import base64
 import os
-
+import uuid
 from django.core.files.base import ContentFile
 from rest_framework import serializers
 
@@ -22,5 +22,18 @@ class Base64ImageField(serializers.ImageField):
 
 def generate_filename_pro(self, filename):
     filename, file_extension = os.path.splitext(filename)
-    url = "pro/%s/%s" % ( self.id, str(filename) + str(file_extension) )
+    name = str(uuid.uuid4()) + str(file_extension)
+    url = "pro/%s/%s" % ( self.id, name)
+    return url
+
+def generate_filename_user(self, filename):
+    filename, file_extension = os.path.splitext(filename)
+    name = str(uuid.uuid4()) + str(file_extension)
+    url = "user/%s/%s" % ( self.id, name)
+    return url
+
+def generate_filename_job(self, filename):
+    filename, file_extension = os.path.splitext(filename)
+    name = str(uuid.uuid4()) + str(file_extension)
+    url = "job/%s/%s" % ( self.id, name)
     return url

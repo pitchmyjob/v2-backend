@@ -1,14 +1,8 @@
 boto==2.43.0
-botocore==1.4.66
 Django==1.10.2
-django-cors-headers==1.2.2
 django-storages==1.5.1
 djangorestframework==3.4.7
-docutils==0.12
 easy-thumbnails==2.3
-jmespath==0.9.0
 Pillow==3.4.2
 psycopg2==2.6.2
-python-dateutil==2.5.3
-s3transfer==0.1.9
-six==1.10.0
+boto3==1.4.1

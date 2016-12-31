@@ -14,7 +14,7 @@ class ProInline(admin.StackedInline):
 class UserAdmin(UserAdmin_):
 	fieldsets = (
 		(_('Personal info'), {
-			'fields': ('first_name', 'last_name', 'username', 'email', 'password', 'pro'),
+			'fields': ('first_name', 'last_name', 'username', 'email', 'password', 'image', 'pro'),
 		}),
 		(_('Permissions'), {
 			'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),

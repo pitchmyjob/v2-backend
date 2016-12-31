@@ -16,7 +16,7 @@ SECRET_KEY = '359#8&&imbc+9m#y1!v$6897q@tadk5-z=is8=pi&@90_jyhmu'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ 
 
 # Application definition
 
@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'backend.apps.datas',
     'backend.apps.pro',
     'backend.authentification',
+    'backend.apps.job',
     'corsheaders',
 
 ]
