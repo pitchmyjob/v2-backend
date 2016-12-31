@@ -13,7 +13,7 @@ router.register(r'job', JobViewSet, base_name='job')
 router_urls = router.urls
 
 urlpatterns = [
-    url(r'^', include(router_urls)),
+    url(r'^', include(router_urls)), 
     url(r'^pro/', include(pro_urls)),
     url(r'^datas/', include(datas_urls)),
     url(r'^job/', include(job_urls)),
