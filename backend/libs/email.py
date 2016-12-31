@@ -26,6 +26,6 @@ class AsyncEmail:
             "subject" : self.subject,
             "ctx" : self.context
         }
-        self.pool.apply_async(send_email, [body, self.attr])
+        #self.pool.apply_async(send_email, [body, self.attr])
         self.pool.close()
 
